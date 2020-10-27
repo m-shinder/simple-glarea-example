@@ -66,6 +66,10 @@ and flush changes to screen
 Aim of shaders is tell us color of pixel based on it position, 
 to keep thing simple we just always return light orange color RGBA(1.0;0.5;0.2;1.0)
 
+# Contribution
+If you don't understand something, open an issue i will try answer your question and update readme
+it would be awesome contrubution because it help make this example easier to understand
+
 ## Give thanks
 If you like this example.
 Or it helps you
