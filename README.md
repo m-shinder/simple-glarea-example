@@ -1,7 +1,7 @@
 # simple-glarea-example
 Simple example of using GtkGLArea to draw a triangle.
 
-I found existing glarea examples to complex so i decide to write my own.
+I find existing glarea examples to complex so i decide to write my own.
 It just a single `main.c` file that depends only on GTK+ and GTK+ dependencies
 You have to ensure that you have `gtk-3-dev` installed.  
 Then you can compile code with  
