@@ -3,17 +3,18 @@ Simple example of using GtkGLArea to draw a triangle.
 
 I found existing glarea examples to complex so i decide to write my own.
 It just a single `main.c` file that depends only on GTK+ and GTK+ dependencies
-You have to ensure that you have `gtk-3-dev` installed then you can compile code with  
+You have to ensure that you have `gtk-3-dev` installed.  
+Then you can compile code with  
 ```gcc main.c `pkg-config --cflags gtk+-3.0 --libs epoxy` ```
 and run with `./a.out`. 
-It have to work, if it isn't open issue  and provide as more info as possible
+It have to work, if it isn't open issue  and provide as more info as possible.  
 I also wrote an short explanation so if you interested it is below 
 
-__!!! IT NOT A PRODUCTION CODE !!!__
+__!!! IT NOT A PRODUCTION CODE !!!__  
 In this example i do stuff that unacceptable in real code.
 I don't check errors after openGL, i write all code in one file and i store shaders source in same file as C source.
 It not good, but i did it for keeping example easy to understand.
-So read this code understand it, and try to find some more realistic examples.
+So read this code understand it, and try to find some more realistic examples.  
 _They will be more complex but i hope after this, you'll be able to understand them._
 
 ## How it works
