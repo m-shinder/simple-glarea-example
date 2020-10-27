@@ -1,13 +1,13 @@
 # simple-glarea-example
 Simple example of using GtkGLArea to draw a triangle.
 
-I find existing glarea examples to complex so i decide to write my own.
-It just a single `main.c` file that depends only on GTK+ and GTK+ dependencies
+I find existing glarea examples to complex so i decided to write my own.
+It just a single `main.c` file that depends only on GTK+ and GTK+ dependencies.
 You have to ensure that you have `gtk-3-dev` installed.  
-Then you can compile code with  
+Then you can compile code with:  
 ```gcc main.c `pkg-config --cflags gtk+-3.0 --libs epoxy` ```
-and run with `./a.out`. 
-It have to work, if it isn't open issue  and provide as more info as possible.  
+and run with `./a.out`.  
+It have to work, if it don't, open issue  and provide as more info as possible.  
 I also wrote an short explanation so if you interested it is below 
 
 __!!! IT NOT A PRODUCTION CODE !!!__  
@@ -37,38 +37,38 @@ _it is default behavior it possible to disable [auto-render](https://developer.g
 and call update function manualy_
 
 #### buildShaderProgram()
-here we just compile shaders which source is stored as global variable.
+Here we just compile shaders which source is stored as global variable.
 It's bad, i know but this is just an example.
 After comilation we link shaders to program and delete them.
 
 #### on_realize()
 here we do some magic.
 First thing first we call `buildShaderProgram()`
-and then we put our vertices in buffers, so openGL can read them
-vertices is just cordinates op point in normalized space.
-We take all our area put (0;0;0) in center and normalize all points to \[-1;1]
-so top left corner is (-1;1;Z) top right (1;1;Z) and so on...
+and then we put our vertices in buffers, so openGL can read them.
+Vertices is just cordinates of points in normalized space.
+We take all our area put (0;0;0) in center and normalize all points to \[-1;1].
+So top left corner is (-1;1;Z) top right (1;1;Z) and so on...
 
 #### render()
 This function set openGL context to current GLarea and call `draw_triangle()` function.
 You can write function like `draw_triangle()` _(ex. `draw_rectangle()` :)_ and call it here.
-it exist just for code organisation
+This function exist just for code organisation
 
 #### draw_triangle()
 The actual triangle!
 First we clear glarea with normalized to \[0;1] RGBA color.
 Then we tell openGL to use our shader program and vertex buffer.
-And ask openGL to draw binded vertecies with `glDrawArrays()` and colorize it with binded shader program.
-After that we can bind nulls to clear context
-and flush changes to screen
+And asking openGL to draw binded vertecies with `glDrawArrays()` and colorize it with binded shader program.
+After that we can bind nulls to clear context and flush changes to screen
 
 ### shaders
 Aim of shaders is tell us color of pixel based on it position, 
 to keep thing simple we just always return light orange color RGBA(1.0;0.5;0.2;1.0)
 
 # Contribution
-If you don't understand something, open an issue i will try answer your question and update readme
-it would be awesome contrubution because it help make this example easier to understand
+If you don't understand something, open an issue i will try answer your question and update readme.
+It would be awesome contrubution because it help make this example easier to understand.
+If you found typo, i have already open an issue so tell me about it there
 
 ## Give thanks
 If you like this example.
