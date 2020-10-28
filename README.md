@@ -1,21 +1,21 @@
 # simple-glarea-example
 Simple example of using GtkGLArea to draw a triangle.
 
-I find existing glarea examples to complex so i decided to write my own.
-It just a single `main.c` file that depends only on GTK+ and GTK+ dependencies.
-You have to ensure that you have `gtk-3-dev` installed.  
+I find existing glarea examples too complex so i decided to write my own.
+It's just a single `main.c` file that depends only on GTK+ and GTK+ dependencies.
+You has to ensure that you have `gtk-3-dev` installed.  
 Then you can compile code with:  
 ```gcc main.c `pkg-config --cflags gtk+-3.0 --libs epoxy` ```
 and run with `./a.out`.  
 It have to work, if it don't, open issue  and provide as more info as possible.  
-I also wrote an short explanation so if you interested it is below 
+I also wrote an short explanation so, if you are interested it is below 
 
-__!!! IT NOT A PRODUCTION CODE !!!__  
-In this example i do stuff that unacceptable in real code.
-I don't check errors after openGL, i write all code in one file and i store shaders source in same file as C source.
-It not good, but i did it for keeping example easy to understand.
-So read this code understand it, and try to find some more realistic examples.  
-_They will be more complex but i hope after this, you'll be able to understand them._
+__!!! NOT A PRODUCTION CODE !!!__  
+In this example I do stuff which is unacceptable in real code.
+I don't check errors after openGL, I write whole code in one file and I store shaders source in same file as C source.
+It not good, but I did it for keeping example easy to understand.
+So read this code, understand it, and try to find some more realistic examples.  
+_They will be more complex but i hope you'll be able to understand them._
 
 ## How it works
 Here im going to explain what this code mean.
@@ -23,23 +23,23 @@ I'm not going to explain GTK usage and i'm not going deep into openGL workflow
 you can read it here:
 * [GTK](https://developer.gnome.org/gtk3/stable/gtk-getting-started.html)
 * [openGL](https://www.khronos.org/opengl/wiki/Getting_Started)  
-note that you already have openGL context that provided by GtkGLArea
+note that you already have openGL context, provided by GtkGLArea
 
 ### Functions
 #### main()
-All that main() do in this code is creation GtkApplication, and binding activate function to it
+All that main() do in this code is creating GtkApplication, and binding activate function to it
 
 #### activate()
 Here we create a GtkGLArea instance and bind two signals to it
-1. realize - it will run once? when window is appear to user
+1. realize - it will run once? when window appears to the user
 2. render - every time GTK updates the window this function will be runned  
 _it is default behavior it possible to disable [auto-render](https://developer.gnome.org/gtk3/stable/GtkGLArea.html#GtkGLArea--auto-render)
 and call update function manualy_
 
 #### buildShaderProgram()
 Here we just compile shaders which source is stored as global variable.
-It's bad, i know but this is just an example.
-After comilation we link shaders to program and delete them.
+It's bad, I know, but this is just an example.
+After the comilation we link shaders to program and delete them.
 
 #### on_realize()
 here we do some magic.
